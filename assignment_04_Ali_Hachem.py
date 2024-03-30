@@ -4,3 +4,27 @@ class Task:
         self.__description=__descritpion
         self.__priority=__priority
         self.__completed=__completed
+
+    def getTaskId(self):
+        return self.__task_id
+    
+    def setTaskId(self,task_id):
+        self.__task_id=task_id
+    
+    def getDescription(self):
+        return self.__description
+    
+    def setDescription(self,description):
+        self.__description=description
+
+    def getPriority(self):
+        return self.__priority
+    
+    def setPriority(self,priority):
+        self.__priority=priority
+
+    def getStatus(self):
+        return self.__completed
+    
+    def setStatus(self,status):
+        self.__completed=status
