@@ -33,3 +33,5 @@ class Task:
     def getNext(self):
         return self.__next
     
+    def setNext(self,next):
+        self.__next=next
