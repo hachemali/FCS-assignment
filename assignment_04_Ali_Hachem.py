@@ -4,6 +4,7 @@ class Task:
         self.__description=__descritpion
         self.__priority=__priority
         self.__completed=__completed
+        self.__next=None
 
     def getTaskId(self):
         return self.__task_id
@@ -28,3 +29,7 @@ class Task:
     
     def setStatus(self,status):
         self.__completed=status
+
+    def getNext(self):
+        return self.__next
+    
