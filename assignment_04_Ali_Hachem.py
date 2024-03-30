@@ -35,3 +35,8 @@ class Task:
     
     def setNext(self,next):
         self.__next=next
+
+class PriorityQueue:
+    def __init__(self):
+        self.__header=None
+    
