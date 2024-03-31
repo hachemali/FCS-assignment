@@ -40,3 +40,8 @@ class PriorityQueue:
     def __init__(self):
         self.__header=None
     
+    def isEmpty(self):
+        if self.__header==None:
+            return True
+        else:
+            return False
