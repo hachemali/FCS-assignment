@@ -63,9 +63,9 @@ class PriorityQueue:
             current= self.__header
             self.__header=current.getNext()
             current.setNext(None)
-            task=current.getTaskId()
+            task_id=current.getTaskId()
             current=None
-            return task
+            return task_id
         
 
     
