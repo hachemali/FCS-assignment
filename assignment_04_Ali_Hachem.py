@@ -50,7 +50,7 @@ class PriorityQueue:
             current=self.__header
             previous=current
             priority=new_Task.getPriority()
-            while(priority>current.getPriority() and current is not None):
+            while(priority<current.getPriority() and current is not None):
                 previous=current
                 current=current.getNext()
             new_Task.setNext(current)
@@ -59,6 +59,13 @@ class PriorityQueue:
     def dequeue(self):
         if (self.isEmpty()):
             return -99
+        else:
+            current= self.__header
+            self.__header=current.getNext()
+            current.setNext(None)
+            task=current.getTaskId()
+            current=None
+            return task
         
 
     
