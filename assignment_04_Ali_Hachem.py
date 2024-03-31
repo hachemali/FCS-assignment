@@ -41,7 +41,21 @@ class PriorityQueue:
         self.__header=None
     
     def isEmpty(self):
-        if self.__header==None:
-            return True
+        return self.__header==None
+    
+    def enqueue(self,new_Task:Task):
+        if (self.isEmpty()):
+            self.__header=new_Task
         else:
-            return False
+            current=self.__header
+            previous=current
+            priority=new_Task.getPriority()
+            while(priority<current.getPriority() and current is not None):
+                previous=current
+                current=current.getNext()
+            new_Task.setNext(current)
+            previous.setNext(new_Task)
+    
+    
+
+    
