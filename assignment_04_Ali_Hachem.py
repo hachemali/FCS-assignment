@@ -50,7 +50,7 @@ class PriorityQueue:
             current=self.__header
             previous=current
             priority=new_Task.getPriority()
-            while(priority<current.getPriority() and current is not None):
+            while(current is not None and priority<current.getPriority() ):
                 previous=current
                 current=current.getNext()
             new_Task.setNext(current)
@@ -71,7 +71,15 @@ class Stack:
     def __init__(self):
         self.__header=None
 
-    
+    def push(self,completed_task:Task):
+        if self.__header==None:
+            self.__header=completed_task
+        else:
+            current=self.__header
+            self.__header=completed_task
+            completed_task.setNext(current)
+            
+
     
 
     
