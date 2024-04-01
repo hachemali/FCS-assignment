@@ -72,14 +72,19 @@ class Stack:
         self.__header=None
 
     def push(self,completed_task:Task):
-        if self.__header==None:
+        if self.__header is None:
             self.__header=completed_task
         else:
-            current=self.__header
+            completed_task.setNext(self.__header)
             self.__header=completed_task
-            completed_task.setNext(current)
-            
 
-    
+    def pop(self):
+        if self.__header is None:
+            return None
+        else:
+            current=self.__header
+            self.__header=current.getNext()
+            current.setNext(None) 
+            return current
 
     
