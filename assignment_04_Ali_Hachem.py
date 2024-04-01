@@ -67,5 +67,11 @@ class PriorityQueue:
             current=None
             return task_id
         
+class Stack:
+    def __init__(self):
+        self.__header=None
+
+    
+    
 
     
