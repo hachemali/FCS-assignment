@@ -93,4 +93,14 @@ class TaskManager:
        self.task_history=Stack()
     def addNewTask(self,new_task:Task):
         self.task_queue.enqueue(new_task)
+    def getTask(self,task_id):
+        if self.task_queue.__header is None:
+            return None
+        current=self.task_queue.__header
+        if current.getTaskId()==task_id:
+            return current
+        else:
+         while (current is not None and current.getTaskId()!=task_id):
+            current=current.getNext()
+        return current 
 
