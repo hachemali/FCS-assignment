@@ -115,5 +115,15 @@ class TaskManager:
             self.task_history.push(current)
             self.task_queue.dequeue()
         
-        
+    def displayInOrder(self):
+        if (self.task_queue.isEmpty()):
+            print("empty")
+
+        current = self.task_queue.__header
+
+        while (current is not None):
+            print(current.getTaskId(),current.getDescription(), end="")
+            current =  current.getNext()
+
+        print("//")
 
