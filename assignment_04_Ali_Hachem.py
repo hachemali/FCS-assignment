@@ -88,7 +88,7 @@ class Stack:
             return current
 
 class TaskManager:
-    task_queue=PriorityQueue
-    task_history=Stack
     def __init__(self):
-        
+       task_queue=PriorityQueue
+       task_history=Stack
+    
