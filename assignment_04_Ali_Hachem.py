@@ -125,5 +125,18 @@ class TaskManager:
             print(current.getTaskId(),current.getDescription(), end="")
             current =  current.getNext()
 
-        print("//")
+        
+    
+    def displayNotCompleted(self):
+         
+        if (self.task_queue.isEmpty()):
+            print("empty")
 
+        current = self.task_queue.__header
+
+        while (current is not None):
+            if not current.getStatus():
+             print(current.getTaskId(),current.getDescription(), end="")
+             current =  current.getNext()
+
+       
