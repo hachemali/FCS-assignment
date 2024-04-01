@@ -91,8 +91,10 @@ class TaskManager:
     def __init__(self):
        self.task_queue=PriorityQueue()
        self.task_history=Stack()
+
     def addNewTask(self,new_task:Task):
         self.task_queue.enqueue(new_task)
+
     def getTask(self,task_id):
         if self.task_queue.__header is None:
             return None
@@ -103,4 +105,15 @@ class TaskManager:
          while (current is not None and current.getTaskId()!=task_id):
             current=current.getNext()
         return current 
+     
+    def markCompleted(self):
+        if self.task_queue.isEmpty():
+            return 
+        else:
+            current=self.task_queue.__header
+            current.setStatus(True)
+            self.task_history.push(current)
+            self.task_queue.dequeue()
+        
+        
 
