@@ -143,7 +143,7 @@ class TaskManager:
         if (self.task_history.isEmpty()):
             print ("There is no completed tasks")
         else:
-            current=self.task_history.__header
+            current=self.task_history.pop()
             print(current.getTaskId(),current.getDescription(), end="")
             
 
