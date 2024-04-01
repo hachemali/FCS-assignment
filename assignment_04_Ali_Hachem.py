@@ -89,6 +89,8 @@ class Stack:
 
 class TaskManager:
     def __init__(self):
-       task_queue=PriorityQueue
-       task_history=Stack
-    
+       self.task_queue=PriorityQueue()
+       self.task_history=Stack()
+    def addNewTask(self,new_task:Task):
+        self.task_queue.enqueue(new_task)
+
